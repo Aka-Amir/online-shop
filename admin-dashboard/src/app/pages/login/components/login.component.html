@@ -1,0 +1,22 @@
+<div class="loginForm">
+    <form action="" (submit)="getForm()" [formGroup]="LoginForm">
+        <h1> ورود به پنل ادمین </h1>
+        <div class="username">
+            <label for="">
+                نام کاربری
+            </label>
+            <br>
+            <input type="text" formControlName="username">
+        </div>
+        <div class="password">
+            <label for="">
+                رمز عبور
+            </label>
+            <br>
+            <input type="password" formControlName="password">
+        </div>
+        <div class="submit">
+            <button type="submit">ورود</button>
+        </div>
+    </form>
+</div>

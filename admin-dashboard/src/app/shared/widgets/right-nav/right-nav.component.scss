@@ -1,0 +1,82 @@
+nav {
+    height: calc(100% - 20px);
+    width: 200px;
+    position: fixed;
+    right: 7.5px;
+    top: 10px;
+    border-radius: 10px ;
+    background-image: linear-gradient(to bottom right , rgb(44, 51, 66) , rgb(26, 36, 59));
+    color: var(--nav-fore-color);
+    box-shadow:
+        4px 4px 10px rgba(0, 0, 0, 0.342) , -5px -5px 10px rgba(255, 255, 255, 0.979) ,
+        inset 4px 4px 8px rgba(0, 0, 0, 0.746);
+    direction: rtl;
+    text-align: right;
+    ul {
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: 70%;
+        margin-top: 10px;
+        padding: 10px;
+        li {
+            align-items: center;
+            display: flex;
+            margin: 10px 0;
+            height: 65px;
+            flex: 1;
+            padding: 0 10px;
+            border-radius: 0px;
+            text-align: right;
+            position: relative;
+            cursor: pointer;
+            span {padding: 0 10px;}
+            &:hover {
+                color: var(--username-color);
+            }
+            &:focus {
+              outline: none;
+            }
+            &::before {
+                content: '';
+                border-bottom: 1px solid var(--color1);
+                position: absolute;
+                bottom: 1px;
+                width: 0%;
+                opacity: 0;
+                right: 0;
+                transition: 0.5s ease;
+              }
+              &.active {
+                &::before {
+                    opacity: 1;
+                    width: 100%;
+                }
+                i {
+                    background: linear-gradient(to right , var(--color1) 20% , var(--color2));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+    }
+    div.username {
+        text-align: center;
+        padding-top: 10px;
+        div.name {
+            font-weight: 700;
+        }
+        div.role {
+            color: var(--role-color);
+        }
+    }
+    div.logout {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        padding: 20px 0;
+    }
+}

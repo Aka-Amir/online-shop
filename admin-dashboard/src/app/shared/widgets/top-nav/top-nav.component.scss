@@ -1,0 +1,48 @@
+div.top-nav{
+    width: 85%;
+    position: fixed;
+    right: 120px;
+    top: 0px;
+    text-align: right;
+    direction: rtl;
+    div.logout {
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: var(--nav-bg-color);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+    }
+    div.username {
+        padding: 10px 50px;
+        width: auto;
+        display: inline-block;
+        background-color: var(--nav-bg-color);
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+        div.name {
+            font-weight: 700;
+            color: var(--username-color);
+        }
+        div.role {
+            color: var(--role-color);
+            position: relative;
+            margin-right: 10px;
+            padding: 2px;
+            &::before {
+                content: '';
+                position: absolute;
+                right: -10px;
+                top: 50%;
+                border-radius: 20px;
+                padding: 2px;
+                border: 1px solid var(--role-color);
+                background-color: var(--role-color);
+            }
+        }
+    }
+}

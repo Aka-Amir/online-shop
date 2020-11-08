@@ -1,0 +1,27 @@
+<div class="orders">
+  <h1 class="title">
+    سفارشات
+  </h1>
+  <div class="order-table">
+    <div class="order-header">
+      <div class="filter-by">
+        فیلتر بر اساس
+        <select [formControl]="DropDown" (change)="LogVal()">
+          <option value="today" selected>امروز</option>
+          <option value="yesterday">دیروز</option>
+          <option value="one week ago">یک هفته پیش</option>
+          <option value='one month ago'>یک ماه پیش</option>
+        </select>
+      </div>
+      <div class="total">
+        <div class="t-sell">
+          500,000 <i class="fas fa-money-bill"></i>
+        </div>
+        <div class="t-orders">
+          10 <i class="fas fa-shopping-cart"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

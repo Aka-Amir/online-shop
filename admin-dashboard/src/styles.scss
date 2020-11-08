@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Iranian Sans';
+    src: url('assets/is.ttf') format('TrueType');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.25s ease;
+    font-family: 'Iranian Sans' , sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--fore-color);
+    width: 100vw;
+    min-height: 100vh;
+}
+
+:root {
+    --bg-color: #eee;
+    --fore-color: #333;
+}

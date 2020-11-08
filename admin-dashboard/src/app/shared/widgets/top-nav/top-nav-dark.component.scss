@@ -1,0 +1,15 @@
+div.top-nav {
+    --nav-bg-color: #ddd;
+    --nav-fore-color: #555;
+    --username-color: #888;
+    --role-color: #0a0;
+}
+
+@media(prefers-color-scheme: dark) {
+    div.top-nav {
+        --nav-bg-color: #555;
+        --nav-fore-color: #eee;
+        --username-color: #ccc; 
+        --role-color: #0f0;
+    }
+}

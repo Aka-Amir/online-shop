@@ -1,0 +1,13 @@
+<div class="top-nav">
+    <div class="username">
+        <div class="name">
+            {{ this.CurrentUser.username }}
+        </div>
+        <div class="role">
+            {{ this.roles[this.CurrentUser.role] }}
+        </div>
+    </div>
+    <div class="logout">
+        <i class="fas fa-sign-out-alt"></i>
+    </div>
+</div>

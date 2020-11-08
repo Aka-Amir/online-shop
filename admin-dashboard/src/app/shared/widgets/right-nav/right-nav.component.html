@@ -1,0 +1,39 @@
+<nav>
+    <div class="username">
+        <div class="name">
+            {{ this.CurrentUser.username }}
+        </div>
+        <div class="role">
+            {{ this.roles[this.CurrentUser.role] }}
+        </div>
+    </div>
+    <ul>
+        <li class="items" [routerLink]="[ '/dashboard' ]" [routerLinkActiveOptions]='{exact: true}'
+            routerLinkActive="active">
+            <i class="fas fa-tachometer-alt"></i> <span>داشبورد</span>
+        </li>
+        <li class="items" [routerLink]="[ '/dashboard/products' ]" [routerLinkActiveOptions]='{exact: true}'
+            routerLinkActive="active">
+            <i class="fas fa-boxes"></i> <span>محصولات</span>
+        </li>
+        <li class="items" [routerLink]="[ '/dashboard/orders' ]" [routerLinkActiveOptions]='{exact: true}'
+            routerLinkActive="active">
+            <i class="fas fa-shopping-cart"></i> <span>سفارشات</span>
+        </li>
+        <li class="items">
+            <i class="fas fa-users"></i> <span>کاربران</span>
+        </li>
+        <li class="items">
+            <i class="fas fa-cog"></i> <span>تنظیمات</span>
+        </li>
+        <li class="items">
+            <i class="fas fa-chart-pie"></i> <span>آمار</span>
+        </li>
+        <li class="items">
+            <i class="fas fa-ticket-alt"></i> <span>تیکت ها</span>
+        </li>
+    </ul>
+    <div class="logout">
+        <i class="fas fa-sign-out-alt"></i>
+    </div>
+</nav>

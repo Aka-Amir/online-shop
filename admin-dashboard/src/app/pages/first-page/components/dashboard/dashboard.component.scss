@@ -1,0 +1,60 @@
+div.userCard {
+    --dashboard-background-color: #444;
+    --dashboard-medium-light-gradiant: linear-gradient(to bottom right , #ebebeb , #d3d3d3);
+}
+
+h2.untilNow {
+    margin: 30px;
+}
+div.userCard {
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    display: flex;
+    flex-flow: wrap;
+}
+div.card {
+    background-color: #ddd;
+    padding: 0px;
+    flex: 1 1 45%;
+    display: inline-block;
+    // border: 1px solid rgb(44, 51, 66);
+    margin: 50px 10px;
+    border-radius: 0px;
+    border-radius: 7px;
+    font-weight: 100;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.13);
+    .red {
+        color: red;
+    }
+    .green {
+        color: green;
+    }
+    .headline {
+        font-weight: 300;
+        font-size: 2em;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: white;
+        background-color: rgb(44, 51, 66) ;
+        border-radius: 7px 7px 0px 0;
+        i {
+            color: rgba(255, 255, 255, 0.452);
+            float: left;
+            padding: 0 15px;
+            text-align: center;
+        }
+    }
+    p.value {
+        text-align: left;
+        direction: ltr;
+        font-size: 1.5em;
+        color: blue;
+        padding: 20px;
+    }
+    p.total {
+        text-align: left;
+        direction: ltr;
+        padding: 10px 20px;
+    }
+}
