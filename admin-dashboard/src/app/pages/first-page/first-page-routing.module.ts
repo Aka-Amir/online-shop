@@ -18,10 +18,11 @@ const childeRoutes: Routes = [
     component: OrderComponent
   }, {
     path: 'products',
-    component: ListComponent,
+    component: ProductsComponent,
     children: [
+      {path: '' , redirectTo: 'list' , pathMatch: 'full'},
       { path: 'add', component: AddComponent },
-      { path: '', component: ListComponent }
+      { path: 'list', component: ListComponent }
     ]
   }
 ];
