@@ -8,9 +8,17 @@ import { SharedModule } from 'shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OrderComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
+import { AddComponent } from './components/products/add/pr-add.component';
+import { ListComponent } from './components/products/list/pr-list.component';
 
 @NgModule({
-  declarations: [MainComponent, OrderComponent, ProductsComponent],
+  declarations: [
+    MainComponent,
+    OrderComponent,
+    ProductsComponent,
+    AddComponent,
+    ListComponent
+  ],
   imports: [
     CommonModule,
     FirstPageRoutingModule,

@@ -1,0 +1,72 @@
+div.add-product {
+    a {
+        background-color: rgb(174, 7, 252);
+        color: white;
+        display: inline-block;
+        margin: 20px 0;
+        border-radius: 5px;
+        font-size: 1.2em;
+        text-decoration: none;
+        padding: 10px;
+    }
+}
+
+button.plus {
+    padding: 5px;
+    background-color: transparent;
+    color: #aaa;
+    border: none;
+}
+div.color-list {
+    div.no-color {
+        color: #555;
+        padding: 10px;
+    }
+}
+label[for='ImageInput']#lbl {
+    text-align: center;
+    width: 40px;
+    padding: 10px 0;
+    height: 40px;
+    margin: 0 20px;
+    color: white;
+    background-color: rgb(174, 7, 252);
+    border-radius: 20px;
+    box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.2);
+        text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4);
+    }
+}
+#ImageInput {
+    display: none;
+}
+.detail {   
+    border-top: 5px solid rgb(174, 7, 252);
+}
+
+div.images {
+    margin: 0 10px;
+    div.image-row {
+        display: inline-block;
+    }
+    img {
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        margin: 0 10px;
+        position: relative;
+        &::before {
+            content: '';
+            color: red;
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+        }
+    }
+}
