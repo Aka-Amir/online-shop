@@ -9,4 +9,9 @@ export class ProductsService {
     async initialize(): Promise<boolean> {
         return true;
     }
+
+    async getCategory(): Promise<Array<string>> {
+        const ret = [''];
+        return ret;
+    }
 }

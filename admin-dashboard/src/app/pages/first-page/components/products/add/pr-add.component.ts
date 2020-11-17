@@ -28,16 +28,20 @@ export class AddComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        
+    }
 
     addedNewFile(evnt: HTMLInputEvent): void {
         const target = this.label.nativeElement as HTMLLabelElement;
         const file = evnt.target.files[0];
-        const fileUrl = URL.createObjectURL(file);
+        // const fileUrl = URL.createObjectURL(file);
 
         const reader = new FileReader();
-        reader.onload = e => this.imagesUrlList.push(reader.result);
-        reader.readAsDataURL(file);
+        reader.onload = e => this.imagesUrlList.push(e.target.result);
+        if (file !== undefined) {
+            reader.readAsDataURL(file);
+        }
 
         this.imagesFileList.push(file);
     }
