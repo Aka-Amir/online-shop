@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
+import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 
 interface HTMLInputEvent extends Event {
     target: HTMLInputElement & EventTarget;
@@ -17,6 +18,13 @@ export class AddComponent implements OnInit {
     imagesUrlList = []; // to preview
     imagesFileList = []; // sends to api
     MainImage = 0;
+
+    // Forms
+    $setting = new FormGroup({
+        newCategory: new FormControl('')
+    });
+    $details = new FormGroup({});
+    $product = new FormGroup({});
 
     constructor() { }
 
@@ -61,5 +69,14 @@ export class AddComponent implements OnInit {
         }, 300);
 
         return false;
+    }
+
+    addCategory(): void {
+        // TODO: get value
+        // TODO: send to data base
+        // TODO: Update
+
+
+
     }
 }
