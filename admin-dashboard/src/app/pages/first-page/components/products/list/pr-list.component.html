@@ -2,4 +2,50 @@
     <a routerLink="../add">
         اضافه کردن محصول <i class="fas fa-plus"></i>
     </a>
+    <div class="product-list-content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            لیست محصولات
+                        </h4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr style="text-align: center;">
+                                        <th>نام محصول</th>
+                                        <th>تعداد</th>
+                                        <th>قیمت</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="text-align: center;" *ngFor="let item of productsList">
+                                        <td class="product-name"> {{ productsList.name }} </td>
+                                        <td>120</td>
+                                        <td> 800000T </td>
+                                        <td> 
+                                            <div class="text-warning">
+                                                <i class="fas fa-edit"></i>
+                                            </div>
+                                        </td>
+                                        <td >
+                                            <div class="text-danger">
+                                                <i class="fas fa-trash"></i>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-info">
+                                                <i class="fas fa-eye"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
