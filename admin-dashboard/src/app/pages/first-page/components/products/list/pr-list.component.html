@@ -13,23 +13,26 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
-                                    <tr style="text-align: center;">
+                                    <tr class="table-header">
                                         <th>نام محصول</th>
                                         <th>تعداد</th>
                                         <th>قیمت</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr style="text-align: center;" *ngFor="let item of productsList">
-                                        <td class="product-name"> {{ productsList.name }} </td>
-                                        <td>120</td>
-                                        <td> 800000T </td>
-                                        <td> 
+                                    <tr class="tabel-row" *ngFor="let item of productsList">
+                                        <td class="product-name">
+                                            {{ item.name }}
+                                            <span class="category">{{ item.category }}</span>
+                                        </td>
+                                        <td>{{ item.amount }}</td>
+                                        <td> {{ item.price }}T </td>
+                                        <td>
                                             <div class="text-warning">
-                                                <i class="fas fa-edit"></i>
+                                                <i class="fas fa-edit" routerLink="../add"></i>
                                             </div>
                                         </td>
-                                        <td >
+                                        <td>
                                             <div class="text-danger">
                                                 <i class="fas fa-trash"></i>
                                             </div>

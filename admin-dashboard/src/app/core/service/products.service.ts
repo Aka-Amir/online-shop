@@ -17,25 +17,25 @@ export class ProductsService {
         return ReturnValue;
     }
 
-    // loadProduct(): ProductRow[] {
-    //     return this.getProducts().then((e) => {return e});
-    // }
     async getProducts(): Promise<ProductRow[]> {
         const ReturnValue: ProductRow[] = [
             {
-                name: 'پیرهن لویی ویتون' ,
+                name: 'پیرهن لویی ویتون',
                 price: 800,
-                amount: 100
-            } ,
+                amount: 100,
+                category: 'مردانه'
+            },
             {
-                name: 'شلوار ال سی واکی کی' ,
+                name: 'شلوار ال سی واکی کی',
                 price: 400,
-                amount: 300
-            } ,
+                amount: 300,
+                category: 'مردانه'
+            },
             {
-                name: 'کفش نایک ایر' ,
+                name: 'کفش نایک ایر',
                 price: 1200,
-                amount: 40
+                amount: 40,
+                category: 'تمامی افراد'
             }
         ];
         return await ReturnValue;

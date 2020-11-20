@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ProductsService } from 'Core/service/products.service';
+import { OrderService } from 'Core/service/orders.service';
+import { OrdersList } from 'shared/models/orders.interface';
 
 @Component({
   selector: 'app-order',
@@ -10,9 +11,14 @@ import { ProductsService } from 'Core/service/products.service';
 export class OrderComponent implements OnInit {
 
   DropDown = new FormControl('today');
+  orderList: OrdersList[];
 
-  constructor(private PS: ProductsService) {
-    // get products from Service
+  constructor(private OS: OrderService) {
+    OS.getOrders().then((e) => {
+      this.orderList = e;
+      console.log(e);
+
+    });
   }
 
   ngOnInit(): void { }

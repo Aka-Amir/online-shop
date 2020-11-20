@@ -9,4 +9,33 @@ div.list-product {
         text-decoration: none;
         padding: 10px;
     }
+    .table-header {
+        border: none;
+        outline: none;
+        th {
+            border: none;
+            outline: none;
+        }
+    }
+    .table {
+        th , td {
+            border: none
+        }
+        padding: 0 10px;
+        tr.tabel-row {
+            td {
+                padding: 15px 10px;
+                .category {
+                    color: #888;
+                    display: block;
+                    font-size: 0.7em;
+                    padding: 0px 10px;
+                }
+            }
+            &:nth-child(odd) {
+                background-color: rgba(0, 0, 0, 0.041);
+                box-shadow: inset 4px 4px 5px #eee;
+            }
+        }
+    }
 }

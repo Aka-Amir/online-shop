@@ -28,9 +28,7 @@ export class AddComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit(): void {
-        
-    }
+    ngOnInit(): void { }
 
     addedNewFile(evnt: HTMLInputEvent): void {
         const target = this.label.nativeElement as HTMLLabelElement;
