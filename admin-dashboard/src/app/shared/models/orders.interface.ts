@@ -15,7 +15,7 @@
 
 interface OrderType {
     order_productName: string;
-    order_productPrice: string | number;
+    order_productPrice: number;
     order_amount: number;
     order_productCode: string;
 }
@@ -26,4 +26,5 @@ export interface OrdersList {
     user_phone: string | number;
     user_mail: string;
     user_orders: OrderType[];
+    deliveryReport: 'canceled' | 'recived' | 'waiting';
 }

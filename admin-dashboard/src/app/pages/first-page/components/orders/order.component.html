@@ -11,6 +11,7 @@
         <th>شماره تماس</th>
         <th>نام و تعداد محصول</th>
         <th>قیمت کل</th>
+        <th> وضعیت </th>
       </tr>
     </thead>
     <tbody>
@@ -20,8 +21,22 @@
         <td>{{ item.user_address }}</td>
         <td>{{ item.user_phone }}</td>
         <td>
-          <span *ngFor="let order of itme.user_orders">
-            {{ order.order_productName }}
+          <div *ngFor="let order of item.user_orders">
+            {{ order.order_productName }} {{ (order.order_amount > 1)? order.order_amount + "x" : "" }}
+          </div>
+        </td>
+        <td>
+          {{ fullPrice }}T
+        </td>
+        <td>
+          <span *ngIf="item.deliveryReport === 'waiting' " >
+            <span class="text-warning"> در حال انتظار </span>
+          </span>
+          <span *ngIf="item.deliveryReport === 'recived' " >
+            <span class="text-success"> تحویل داده شده </span>
+          </span>
+          <span *ngIf="item.deliveryReport === 'canceled' " >
+            <span class="text-danger"> کنسل شده </span>
           </span>
         </td>
       </tr>
