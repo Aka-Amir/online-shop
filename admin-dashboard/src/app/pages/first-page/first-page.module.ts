@@ -10,6 +10,7 @@ import { OrderComponent } from './components/orders/orders.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AddComponent } from './components/products/add/pr-add.component';
 import { ListComponent } from './components/products/list/pr-list.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ListComponent } from './components/products/list/pr-list.component';
     OrderComponent,
     ProductsComponent,
     AddComponent,
-    ListComponent
+    ListComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,
