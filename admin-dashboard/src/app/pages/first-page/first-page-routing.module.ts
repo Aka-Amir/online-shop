@@ -8,6 +8,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { AddComponent } from './components/products/add/pr-add.component';
 import { ListComponent } from './components/products/list/pr-list.component';
 import { UsersComponent } from './components/users/users.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { TicketsComponent } from './components/tickets/tickets.component';
 
 const childeRoutes: Routes = [
   {
@@ -22,11 +24,15 @@ const childeRoutes: Routes = [
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'add', component: AddComponent },
-      { path: 'list', component: ListComponent }
+      { path: 'list', component: ListComponent } ,
     ]
   }, {
     path: 'users',
     component: UsersComponent
+  } , {
+    path: 'statistics' , component: StatisticsComponent
+  }, {
+    path: 'tickets' , component: TicketsComponent
   }
 ];
 

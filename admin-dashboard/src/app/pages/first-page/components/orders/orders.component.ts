@@ -17,7 +17,6 @@ export class OrderComponent implements OnInit {
   constructor(private OS: OrderService) {
     OS.getOrders().then((e) => {
       this.orderList = e;
-      console.log(e);
       this.orderList.forEach(it => {
         it.user_orders.forEach(o => {
           this.fullPrice += o.order_productPrice * o.order_amount;

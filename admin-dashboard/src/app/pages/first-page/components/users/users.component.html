@@ -1,1 +1,77 @@
-<h1>Hello THis Is Users</h1>
+<div class="users">
+    <h1 class="title">کاربران</h1>
+    <div class="row content">
+        <div class="col-3 users-list">
+            <div *ngFor="let user of AllUsers; let i = index" class="row user-card" (click)="showUserInfo(user , i)">
+                <div class="col-3">
+                    <i class="fas fa-user user-ico"></i>
+                </div>
+                <div class="col-9">
+                    <div class="row"> <h3>{{ user.username }}</h3> </div>
+                    <div class="row"> {{ Translator[user.role] }} سایت </div>
+                </div>
+            </div>
+            <div class="row plus">
+                <i class="fa fa-plus"></i>
+            </div>
+        </div>
+        <div class="col-9 users-info">
+            <div class="card user-name-card">
+                <h4>اطلاعات کاربری</h4>
+                <form [formGroup]="usersForm" >
+                    <div class="form-group">
+                        <label for="">
+                            نام کاربری
+                        </label>
+                        <input formControlName="username" type="text" class="form-control col-3">
+                    </div>
+                    <div class="form-group">
+                        <label for="">رمز عبور</label>
+                        <input formControlName="password" type="text" class="form-control col-3">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <h4>نقش</h4>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" formControlName="userRole" class="form-check-input" name="userRole" value="admin">
+                                <span class="radio-title">مدیر</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" formControlName="userRole" class="form-check-input" name="userRole" value="analist">
+                                <span class="radio-title">تحلیلگر</span>
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" formControlName="userRole" class="form-check-input" name="userRole" value="seller">
+                                <span class="radio-title">فروشنده</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button type="button" [class]=" {
+                            btn: true,
+                            'btn-outline-success': !editMode ,
+                            'btn-outline-warning': editMode ,
+                            'mx-2': true
+                        }
+                        ">
+                            {{ (editMode) ? 'ویرایش' : 'ثبت'}}
+                            <i [class]="{
+                                'fa-check': !editMode,
+                                'fa-edit': editMode,
+                                'fas': true
+                            }"></i>
+                        </button>
+                        <button type="reset" class="btn btn-outline-danger" >
+                            حذف <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

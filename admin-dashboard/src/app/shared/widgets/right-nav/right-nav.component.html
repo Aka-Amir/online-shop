@@ -23,13 +23,12 @@
             routerLinkActive="active">
             <i class="fas fa-users"></i> <span>کاربران</span>
         </li>
-        <li class="items">
-            <i class="fas fa-cog"></i> <span>تنظیمات</span>
-        </li>
-        <li class="items">
+        <li class="items" [routerLink]="[ '/dashboard/statistics' ]" [routerLinkActiveOptions]='{exact: true}'
+        routerLinkActive="active">
             <i class="fas fa-chart-pie"></i> <span>آمار</span>
         </li>
-        <li class="items">
+        <li class="items" [routerLink]="[ '/dashboard/tickets' ]" [routerLinkActiveOptions]='{exact: true}'
+        routerLinkActive="active">
             <i class="fas fa-ticket-alt"></i> <span>تیکت ها</span>
         </li>
     </ul>

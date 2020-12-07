@@ -8,7 +8,10 @@ import { LoginService } from 'Core/service/login.service';
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-    constructor(private authService: LoginService) { }
+    constructor(private authService: LoginService) {
+        localStorage.setItem('userInfo' , '' );
+        localStorage.setItem('isLogged' , '' );
+    }
 
     LoginForm = new FormGroup({
         username: new FormControl(),
@@ -16,7 +19,8 @@ export class LoginComponent implements OnInit {
     });
 
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+    }
 
     getForm(): false {
         const form = this.LoginForm.controls;

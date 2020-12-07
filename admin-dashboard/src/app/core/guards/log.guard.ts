@@ -11,18 +11,13 @@ export class LogGuard implements CanActivate {
 
     canActivate(): boolean {
         const logState = localStorage.getItem('isLogged');
-        if (logState.toString() === 'true') {
-            this.isLogged = true;
-            this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
-
-            // localStorage.removeItem('isLogged');
-            // localStorage.removeItem('userInfo');
-        }
-        if (this.isLogged) {
-            return true;
-        }
-        else {
-            this.router.navigate(['/login']);
+        try {
+            if (logState.toString() === 'true') {
+                this.isLogged = true;
+                this.userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            }
+        } catch (e ) {
+            this.router.navigate(['']);
         }
         return this.isLogged;
     }

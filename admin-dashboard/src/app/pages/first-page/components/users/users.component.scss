@@ -1,0 +1,61 @@
+div.users {
+    padding: 20px;
+    div.content {
+        padding: 20px;
+        margin: 30px;
+    }
+    .user-card {
+        border-radius: 5px;
+        background-color: #eee;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.056);
+        margin: 20px 0;
+    }
+    .plus {
+        background-color: rgba(122, 38, 240, 1);
+        margin: 20px 0;
+        border-radius: 5px;
+        padding: 15px;
+        i {
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+    }
+    .user-ico {
+        padding: 15px 10px;
+        font-size: 2em;
+        text-align: center;
+        color: rgb(141, 141, 141);
+        text-shadow: -5px -5px 10px rgb(255, 255, 255) , 5px 5px 10px rgba(0, 0, 0, 0.241);
+    }
+    .user-name-card {
+        padding: 25px 50px;
+        background-color: #f5f5f5;
+        border: 1px solid transparent;
+        outline: none;
+        margin: 20px 0;
+        border-right: 4px solid rgb(156, 38, 240);
+        label {
+            color: #555;
+        }
+        input {
+            background-color: white;
+            border-radius: 3px;
+            border: none;
+            border-right: 3px solid #ccc;
+            box-shadow: 3px 3px 10px rgba(220, 220, 220, 0.2);
+            &:focus {
+                outline: none;
+                box-shadow: none;
+                border-right-color: rgba(122, 38, 240, 0.582);
+            }
+        }
+    }
+    .form-check {
+        direction: rtl;
+        text-align: right;
+        .radio-title {
+            padding: 0 20px;
+        }
+    }
+}

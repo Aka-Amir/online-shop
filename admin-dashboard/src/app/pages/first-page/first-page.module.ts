@@ -11,7 +11,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { AddComponent } from './components/products/add/pr-add.component';
 import { ListComponent } from './components/products/list/pr-list.component';
 import { UsersComponent } from './components/users/users.component';
-
+import { TicketsComponent } from './components/tickets/tickets.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 @NgModule({
   declarations: [
     MainComponent,
@@ -19,7 +20,9 @@ import { UsersComponent } from './components/users/users.component';
     ProductsComponent,
     AddComponent,
     ListComponent,
-    UsersComponent
+    UsersComponent,
+    TicketsComponent,
+    StatisticsComponent
   ],
   imports: [
     CommonModule,
