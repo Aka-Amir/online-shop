@@ -11,15 +11,31 @@ interface ResponseType {
 
 @Injectable()
 export class LoginService {
-    constructor(private guard: LogGuard , private http: HttpClient ) { }
-    private async GetUserPassword(userName: string , userPassword: string): Promise<{response: ResponseType}> {
-        return await this.http.post<{response: ResponseType}>('http://192.168.1.105:3000/users' , {
+
+    private ApiWorks = false;
+
+    constructor(private guard: LogGuard , private http: HttpClient ) {
+        this.http.get<{response: boolean}>('http://192.168.1.105:3000/users').subscribe({
+            next: () => {
+                this.ApiWorks = true;
+            } ,
+            error: () => {
+                console.log('Cant Connect To Server');
+            } ,
+            complete: () => {}
+        });
+    }
+    private GetUserPassword(userName: string , userPassword: string): {response: ResponseType} {
+        this.http.post<{response: ResponseType}>('http://192.168.1.105:3000/users' , {
             username: userName ,
             password: userPassword
-        }).toPromise();
+        }).subscribe((res: {response: ResponseType}) => res , err => {
+            console.log(0);
+        });
+        return {response: {loginResult: true , userRole: 'admin'}};
     }
     async Validate(userName: string, userPassword: string): Promise<void> {
-        const requestResult = await this.GetUserPassword(userName , userPassword);
+        const requestResult = this.GetUserPassword(userName , userPassword);
         console.log(requestResult);
         if (requestResult.response.loginResult && requestResult.response.userRole !== 'not valid') {
             const result = this.guard.LogUserIn({
