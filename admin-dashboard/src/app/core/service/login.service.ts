@@ -15,8 +15,8 @@ export class LoginService {
     private ApiWorks = false;
 
     constructor(private guard: LogGuard , private http: HttpClient ) {
-        this.http.get<{response: boolean}>('http://192.168.1.105:3000/users').subscribe({
-            next: () => {
+        this.http.get<{response: boolean}>('http://192.168.1.105:3000/').subscribe({
+            next: (response) => {
                 this.ApiWorks = true;
             } ,
             error: () => {
@@ -26,12 +26,14 @@ export class LoginService {
         });
     }
     private GetUserPassword(userName: string , userPassword: string): {response: ResponseType} {
-        this.http.post<{response: ResponseType}>('http://192.168.1.105:3000/users' , {
-            username: userName ,
-            password: userPassword
-        }).subscribe((res: {response: ResponseType}) => res , err => {
-            console.log(0);
-        });
+        if(this.ApiWorks) {
+            this.http.post<{response: ResponseType}>('http://192.168.1.105:3000/users' , {
+                username: userName ,
+                password: userPassword
+            }).subscribe((res: {response: ResponseType}) => res , err => {
+                console.log(0);
+            });
+        }
         return {response: {loginResult: true , userRole: 'admin'}};
     }
     async Validate(userName: string, userPassword: string): Promise<void> {
