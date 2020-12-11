@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {Chart} from 'chart.js';
 
+interface ChartGradiant {body: CanvasGradient;  border: CanvasGradient; }
+
 @Component({
     selector: 'app-statistics',
     templateUrl: './statistics.component.html',
@@ -10,33 +12,57 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
     constructor() { }
 
 
-    ngAfterViewInit(): void {
-        const canvas = <HTMLCanvasElement> document.getElementById("chart");
-        const ctx = canvas.getContext('2d');
+    gradiantsTheme = {
+        bluePurple: {
+            body: this.gradiantGenerator('rgba(105, 56, 161, 0.8)' , 'rgba(101, 104, 252, 0.8)' ) ,
+            border: this.gradiantGenerator('rgba(56, 58, 161 , 1)' , 'rgba(101, 104, 252, 1)' )
+        },
+        greenLime: {
+            body: this.gradiantGenerator('rgba(0, 201, 51, 0.8)' , 'rgba(95, 201, 121 ,0.8)'),
+            border: this.gradiantGenerator('rgba(30, 166, 66 , 1)' , 'rgba(27, 128, 79 , 1)')
+        }
+    };
 
-        var gradient = ctx.createLinearGradient(0, 400, 0, 0);
-        gradient.addColorStop(0, 'rgba(105, 56, 161, 0.8)');
-        gradient.addColorStop(1, 'rgba(101, 104, 252, 0.8)');
+    gradiantGenerator(color1: string , color2: string ): CanvasGradient {
+        const canv = document.createElement('canvas');
+        const canvas = canv.getContext('2d');
+        const target = canvas.createLinearGradient(0 , 400 , 0 , 0);
+        target.addColorStop(0, color1);
+        target.addColorStop(1, color2);
 
-        var gradient2 = ctx.createLinearGradient(0, 400, 0, 0);
-        gradient2.addColorStop(1, 'rgba(56, 58, 161 , 1)');
-        gradient2.addColorStop(0, 'rgba(101, 104, 252, 1)');
+        return target;
+    }
 
-        const chartPlaceHolder = new Chart(ctx , {
+    createChart(canvasElement: HTMLCanvasElement): Chart {
+        // Get Ctx
+        const ctx = canvasElement.getContext('2d');
+
+        // create Cahrt
+        Chart.defaults.global.defaultFontFamily = 'Defualt Font';
+        return new Chart(ctx , {
             type: 'line',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+                labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد'],
                 datasets: [{
-                    label: '# of Votes',
+                    label: canvasElement.getAttribute('data-chart-title'),
                     data: [0 , 20, 15 , 30, 40],
-                    backgroundColor: gradient,
-                    borderColor: gradient2,
+                    backgroundColor: this.gradiantsTheme.greenLime.body,
+                    borderColor: this.gradiantsTheme.greenLime.border,
                     borderWidth: 4
                 }]
             },
             options: {
+                legend: {
+                    labels: {
+                        fontFamily: 'Defualt Font'
+                    },
+                    rtl: true
+                } ,
                 tooltips: {
-                    mode: 'x-axis'
+                    mode: 'x-axis',
+                    footerFontFamily: 'Defualt Font',
+                    bodyFontFamily: 'Defualt Font' ,
+                    titleFontFamily: 'Defualt Font',
                 },
                 scales: {
                     xAxes: [{
@@ -55,6 +81,10 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
                 }
             }
         });
+    }
+
+    ngAfterViewInit(): void {
+        const chart = this.createChart(document.getElementById('sell-chart-linear') as HTMLCanvasElement);
     }
 
     ngOnInit(): void {}

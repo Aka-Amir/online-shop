@@ -1,3 +1,8 @@
-div.chart-js {
-    width: 50%;
+div.statistics  {
+    div.row {
+        div.chart-js {
+            background-color: #eee;
+        }
+        display: flex;
+    } 
 }
