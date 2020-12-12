@@ -23,3 +23,26 @@ body {
     --bg-color: #eee;
     --fore-color: #333;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    padding: 10px 0;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 10px 0;
+  }
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #eee;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ddd; 
+}

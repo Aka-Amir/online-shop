@@ -15,4 +15,10 @@ export class RightNavComponent implements OnInit {
     }
 
     ngOnInit(): void { }
+
+    logOut(): void {
+        localStorage.removeItem('userInfo');
+        localStorage.removeItem('isLogged');
+        window.location.reload();
+    }
 }

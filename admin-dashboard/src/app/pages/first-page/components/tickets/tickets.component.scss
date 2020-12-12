@@ -1,0 +1,145 @@
+div.tickets {
+    div.users-chat-list {
+        background-color: #eee;
+        padding: 10px;
+        height: 92.5vh;
+        border-radius: 10px;
+        div.user {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            div.user-icon {
+                text-align: center;
+                padding: 2px 0;
+                i {
+                    display: inline-block;
+                    color: #eee;
+                    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2) , -3px -3px 5px #fff;
+                    font-size: 2em;
+                }
+            }
+            div.user-name {
+                padding: 17px 0 0 0;
+                color: #666;
+            }
+        }
+    }
+    div.chat-place {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 20px;
+        margin: 0 20px;
+        border-radius: 10px;
+        .header {
+            background-color: #83b3ff;
+            padding: 20px;
+            height: 60px;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 10px;
+            .user-icon {
+                text-align: center;
+            }
+        }
+        .body {
+            height: 700px;
+            background-color: #fff;
+            direction: ltr;
+            overflow-y: auto;
+
+            div.col {
+                padding: 25px 0;
+                color: black;
+                position: relative;
+                &.ltr {
+                    direction: ltr;
+                    text-align: left;
+                }
+                div.admin-message {
+                    position: relative;
+                    left: 0;
+                    max-width: 50%;
+                    margin-left: 30px;
+                    display: inline-block;
+                    background-color: #eee;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+                div.user-message {
+                    position: relative;
+                    right: 0;
+                    padding: 10px;
+                    color: white;
+                    max-width: 50%;
+                    margin-right: 30px;
+                    display: inline-block;
+                    background-color: #83b3ff;
+                    border-radius: 5px;
+                }
+                div.user-message , div.admin-message {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        border: 10px solid transparent;
+                        top: 10px;
+                    }
+                }
+                div.user-message {
+                    &::before {
+                        transform: rotate(180deg);
+                        right: -20px;
+                        border-right-color: #83b3ff;
+                    }
+                }
+                div.admin-message {
+                    &::before {
+                        border-right-color: #eee;
+                        left: -20px;
+                    }
+                }
+            }
+        }
+        div.footer {
+            height: 100px;
+            background-color: #eee;
+            padding: 10px;
+            display: flex;
+            direction: ltr;
+            border-radius: 10px;
+            div.msg {
+                flex: 10;
+                textarea {
+                    width: 100%;
+                    height: 100%;
+                    padding: 5px;
+                    resize: none;
+                    border: none;
+                    background-color: #f5f5f5;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            div.send {
+                flex: 1;
+                background-color: #f5f5f5;
+                button {
+                    border: none;
+                    padding: 10px;
+                    font-size: 2em;
+                    margin: 10px;
+                    background-color: transparent;
+                    cursor: pointer;
+                    &:hover {
+                        i {
+                            color: #83b3ff;
+                        }
+                    }
+                    i {
+                        text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.2);
+                        color: #aaa;
+                    }
+                }
+            }
+        }
+    }
+}

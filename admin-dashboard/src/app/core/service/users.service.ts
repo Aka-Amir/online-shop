@@ -13,8 +13,8 @@ export class UsersService {
                 password: 'password',
                 role: 'admin'
             } , {
-                username: 'Raya' ,
-                password: 'I Love U',
+                username: 'Omid' ,
+                password: 'Omid.Rmi',
                 role: 'analist'
             }
         ];

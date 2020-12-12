@@ -96,7 +96,7 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        const chart = this.createChart(document.getElementById('sell-chart-linear') as HTMLCanvasElement , this.gradiantsTheme.bluePurple);
+        const chart = this.createChart(document.getElementById('sell-chart-linear') as HTMLCanvasElement , this.gradiantsTheme.timber);
     }
 
     ngOnInit(): void {}
