@@ -20,6 +20,18 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
         greenLime: {
             body: this.gradiantGenerator('rgba(0, 201, 51, 0.8)' , 'rgba(95, 201, 121 ,0.8)'),
             border: this.gradiantGenerator('rgba(30, 166, 66 , 1)' , 'rgba(27, 128, 79 , 1)')
+        },
+        seaBlue: {
+            body: this.gradiantGenerator('rgba(64, 58, 62, 0.8)' , 'rgba(190, 88, 105 , 0.8)'),
+            border: this.gradiantGenerator('#403A3E' , '#BE5869')
+        },
+        GOB: {
+            body: this.gradiantGenerator('rgba(194, 229, 156 , 0.8)' , 'rgba(100, 179, 244 , 0.8)'),
+            border: this.gradiantGenerator('#c2e59c' , '#64b3f4')
+        },
+        timber: {
+            body:   this.gradiantGenerator('rgba(252, 0, 255 , 0.8)' , 'rgba(0, 219, 222 , 0.8)'),
+            border: this.gradiantGenerator('#fc00ff' , '#00dbde'),
         }
     };
 
@@ -33,7 +45,7 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
         return target;
     }
 
-    createChart(canvasElement: HTMLCanvasElement): Chart {
+    createChart(canvasElement: HTMLCanvasElement , chartColor: ChartGradiant): Chart {
         // Get Ctx
         const ctx = canvasElement.getContext('2d');
 
@@ -46,8 +58,8 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
                 datasets: [{
                     label: canvasElement.getAttribute('data-chart-title'),
                     data: [0 , 20, 15 , 30, 40],
-                    backgroundColor: this.gradiantsTheme.greenLime.body,
-                    borderColor: this.gradiantsTheme.greenLime.border,
+                    backgroundColor: chartColor.body,
+                    borderColor: chartColor.border,
                     borderWidth: 4
                 }]
             },
@@ -84,7 +96,7 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        const chart = this.createChart(document.getElementById('sell-chart-linear') as HTMLCanvasElement);
+        const chart = this.createChart(document.getElementById('sell-chart-linear') as HTMLCanvasElement , this.gradiantsTheme.bluePurple);
     }
 
     ngOnInit(): void {}
