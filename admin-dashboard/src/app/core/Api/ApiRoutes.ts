@@ -11,5 +11,6 @@ export const AdminRoutes = {
     ORDERS_COUNT : ApiAdmin + "/orderscount",
     INCOME : ApiAdmin + "/income",
     TICKET_COUNT : ApiAdmin + "/ticketcount",
+    INCOME_STATISTICS: ApiAdmin + "/incomestatistics"
 
 }
